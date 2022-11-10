@@ -21,6 +21,7 @@ return new class extends Migration
             $table->bigInteger('blood_type_id')->unsigned()->nullable();
             $table->foreign('blood_type_id')->references('id')->on('blood_types') ->onDelete('cascade');
             $table->boolean('verified')->default(FALSE);
+            $table->softDeletes();
 
             $table->timestamps();
         });

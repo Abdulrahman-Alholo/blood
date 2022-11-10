@@ -19,3 +19,4 @@ use App\Http\Controllers\DonateSchedualController;
 Route::post('/login', [AuthController::class, 'login']);
 Route::post('/register', [AuthController::class, 'register']);
 Route::apiResource('donate',DonateSchedualController::class);
+Route::get('/log', [DonateSchedualController::class,'log']);

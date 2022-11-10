@@ -4,10 +4,11 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 class donate_schedual extends Model
 {
-    use HasFactory;
+    use HasFactory,SoftDeletes;
     protected $fillable = [
         "user_id",
         "amount",
@@ -23,5 +24,9 @@ class donate_schedual extends Model
     public function blood_type()
     {
         return $this->belongsTo(BloodType::class,"blood_type_id");
+    }
+    public function log()
+    {
+        return $this->belongsToMany(User::class, 'log');
     }
 }

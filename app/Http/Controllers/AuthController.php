@@ -12,7 +12,7 @@ class AuthController extends Controller
     {
         $request->validate([
             'name' => 'required|string|max:255',
-            'phon_number' => 'required|string|max:255|unique:users',
+            // 'phon_number' => 'required|string|max:255|unique:users',
             'password' => 'required|string|min:6',
         ]);
         $credentials = $request->only('name', 'password');

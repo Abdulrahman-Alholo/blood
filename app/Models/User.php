@@ -64,4 +64,8 @@ class User extends Authenticatable implements JWTSubject
     {
         return $this->hasMany(donate_schedual::class);
     }
+    public function log()
+    {
+        return $this->belongsToMany(donate_schedual::class, 'log');
+    }
 }
